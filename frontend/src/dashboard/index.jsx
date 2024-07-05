@@ -33,9 +33,17 @@ const Dashboard = () => {
       <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 mt-10'>
         <AddResume />
         {/* Map over resumeList to render ResumeCardItem components */}
-        {resumeList.length > 0 && resumeList.map((resume, index) => (
-  <ResumeCardItem resume={resume} key={index} refreshData={GetResumesList} />
-))}
+        {resumeList.length > 0 ? <>
+        {resumeList.length > 0 ? 
+      resumeList.map((resume, index) => (
+        <ResumeCardItem resume={resume} key={index} refreshData={GetResumesList} />
+      )) : "Loading..."  
+      }
+        </>
+: <>
+<h1>No resume found</h1>
+</>
+}
 
       </div>
     </div>

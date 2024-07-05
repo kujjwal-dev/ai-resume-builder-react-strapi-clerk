@@ -58,7 +58,7 @@ const ResumeCardItem = ({ resume, refreshData }) => {
         style={{
           background: resume?.themeColor
         }}>
-        <h2 className='text-sm'>{title}</h2>
+        <h2 className='text-sm'>{title || "Loading.."}</h2>
         <DropdownMenu>
           <DropdownMenuTrigger>
             <MoreVertical className='h-4 w-4 cursor-pointer' />

@@ -38,6 +38,7 @@ const Summary = ({ enabledNext }) => {
 
     try {
       const result = await AIChatSession.sendMessage(PROMPT);
+      console.log("ersult", result)
       const parsedResult = JSON.parse(result.response.text());
       console.log(parsedResult);
       setAiGeneratedSummeryList(parsedResult.experience_levels || []);
